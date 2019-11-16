@@ -31,27 +31,20 @@ public class DeltaTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Only decrement timer if above 0
-        if (TimerAmount >= 0)
+        // Only decrement timer if above 0 and the frog hasn't been saved
+        if (TimerAmount >= 0 && !savedFrog)
         {
             TimerAmount -= Time.deltaTime; // Countdown from timer amount
         }
 
         TimerText.text = TimerAmount.ToString("f1"); // Constantly update timer text
 
-        if (TimerAmount <= 0) // When it hits zero
+        if (TimerAmount <= 0 && !savedFrog) // When it hits zero and the frog hasn't been saved
         {
             GameText.text = FailureMessage; // You have died
             TimerText.text = "0.0"; // Hard set the text if timer has expired
             frogrb.AddForce(-frog.transform.forward * forceAmount, ForceMode.Impulse); // Force push the frog backward
         }
-
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            print("here");
-
-        }
-
 
     }
 }
