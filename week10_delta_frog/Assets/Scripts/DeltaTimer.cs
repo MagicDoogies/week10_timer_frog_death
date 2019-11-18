@@ -46,5 +46,10 @@ public class DeltaTimer : MonoBehaviour
             frogrb.AddForce(-frog.transform.forward * forceAmount, ForceMode.Impulse); // Force push the frog backward
         }
 
+        if (Input.GetKeyDown(KeyCode.Space)) //This activates if the player pressed down on the spacebar to save the frog.
+        {
+            GameText.text = SuccessMessage; //You get a pat on the back for being a decent human being.
+        }
+        
     }
 }

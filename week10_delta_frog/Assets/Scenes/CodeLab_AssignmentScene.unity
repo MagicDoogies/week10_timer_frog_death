@@ -1185,7 +1185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerAmount: 10
   forceAmount: 50
-  GoalMessage: Press the __ button and the frog will not die
+  GoalMessage: Press the 'Spacebar' button and the frog will not die
   SuccessMessage: You did it. The frog is alive.
   FailureMessage: You failed. FROG MURDERER.
   GameText: {fileID: 734908418}
