@@ -11,6 +11,9 @@ public class DeltaTimer : MonoBehaviour
     public string SuccessMessage; // WinGame message
     public string FailureMessage; // Game Over Message
 
+    public AudioClip frog_lived;
+    public AudioClip frog_died;
+
     public Text GameText; // The object with the "messages" text component
     public Text TimerText; // The object for the timer text
 
@@ -42,14 +45,26 @@ public class DeltaTimer : MonoBehaviour
         if (TimerAmount <= 0 && !savedFrog) // When it hits zero and the frog hasn't been saved
         {
             GameText.text = FailureMessage; // You have died
+           
             TimerText.text = "0.0"; // Hard set the text if timer has expired
             frogrb.AddForce(-frog.transform.forward * forceAmount, ForceMode.Impulse); // Force push the frog backward
+
+            GetComponent<AudioSource>().clip = frog_died;//This plays when the player fails to save the frog.
+            GetComponent<AudioSource>().Play();
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space)) //This activates if the player pressed down on the spacebar to save the frog.
         {
+          
             GameText.text = SuccessMessage; //You get a pat on the back for being a decent human being.
+            
+            savedFrog = true; //turns the saved frog boolean true.
+            GetComponent<AudioSource>().clip = frog_lived; //this plays when the player successfully saves the frog.
+            GetComponent<AudioSource>().Play();
+
         }
+
         
     }
 }
