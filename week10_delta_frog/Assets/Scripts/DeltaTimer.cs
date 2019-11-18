@@ -51,8 +51,9 @@ public class DeltaTimer : MonoBehaviour
             TimerText.text = "0.0"; // Hard set the text if timer has expired
             frogrb.AddForce(-frog.transform.forward * forceAmount, ForceMode.Impulse); // Force push the frog backward
             
+      
 
-         audioSource.PlayOneShot(frog_died,1);
+         //audioSource.Stop();
 
         }
 

@@ -1185,7 +1185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3887b4d0ab75faa4783a906cee738305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimerAmount: 10
+  TimerAmount: 2
   forceAmount: 50
   GoalMessage: Press the 'Spacebar' button and the frog will not die
   SuccessMessage: You did it. The frog is alive.
@@ -1315,7 +1315,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ac030da7fae8e6647ad6e446db25c8bd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a45b657c310def241bf046be91520ff3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
