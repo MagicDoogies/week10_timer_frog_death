@@ -1190,8 +1190,8 @@ MonoBehaviour:
   GoalMessage: Press the 'Spacebar' button and the frog will not die
   SuccessMessage: You did it. The frog is alive.
   FailureMessage: You failed. FROG MURDERER.
-  frog_lived: {fileID: 0}
-  frog_died: {fileID: 0}
+  frog_lived: {fileID: 8300000, guid: ac030da7fae8e6647ad6e446db25c8bd, type: 3}
+  frog_died: {fileID: 8300000, guid: a45b657c310def241bf046be91520ff3, type: 3}
   GameText: {fileID: 734908418}
   TimerText: {fileID: 1042151300}
   frog: {fileID: 1126199666}
@@ -1216,11 +1216,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680494467}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a45b657c310def241bf046be91520ff3, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1316,7 +1316,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ac030da7fae8e6647ad6e446db25c8bd, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

@@ -11,6 +11,7 @@ public class DeltaTimer : MonoBehaviour
     public string SuccessMessage; // WinGame message
     public string FailureMessage; // Game Over Message
 
+    AudioSource audioSource;
     public AudioClip frog_lived;
     public AudioClip frog_died;
 
@@ -26,6 +27,7 @@ public class DeltaTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>(); //get the audiosource
         GameText.text = GoalMessage; // Load in instructions
         frogrb = frog.GetComponent<Rigidbody>(); // Init the frogrb variable
         savedFrog = false;
@@ -48,9 +50,9 @@ public class DeltaTimer : MonoBehaviour
            
             TimerText.text = "0.0"; // Hard set the text if timer has expired
             frogrb.AddForce(-frog.transform.forward * forceAmount, ForceMode.Impulse); // Force push the frog backward
+            
 
-            GetComponent<AudioSource>().clip = frog_died;//This plays when the player fails to save the frog.
-            GetComponent<AudioSource>().Play();
+            audioSource.PlayOneShot(frog_lived,1);
 
         }
 
@@ -60,9 +62,7 @@ public class DeltaTimer : MonoBehaviour
             GameText.text = SuccessMessage; //You get a pat on the back for being a decent human being.
             
             savedFrog = true; //turns the saved frog boolean true.
-            GetComponent<AudioSource>().clip = frog_lived; //this plays when the player successfully saves the frog.
-            GetComponent<AudioSource>().Play();
-
+           audioSource.PlayOneShot (frog_died,1);
         }
 
         
