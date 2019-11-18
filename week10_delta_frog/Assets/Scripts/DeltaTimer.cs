@@ -52,7 +52,7 @@ public class DeltaTimer : MonoBehaviour
             frogrb.AddForce(-frog.transform.forward * forceAmount, ForceMode.Impulse); // Force push the frog backward
             
 
-            audioSource.PlayOneShot(frog_lived,1);
+         audioSource.PlayOneShot(frog_died,1);
 
         }
 
@@ -62,7 +62,9 @@ public class DeltaTimer : MonoBehaviour
             GameText.text = SuccessMessage; //You get a pat on the back for being a decent human being.
             
             savedFrog = true; //turns the saved frog boolean true.
-           audioSource.PlayOneShot (frog_died,1);
+            if (savedFrog == true){
+             audioSource.PlayOneShot (frog_lived,1);
+            }
         }
 
         
